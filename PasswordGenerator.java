@@ -36,6 +36,11 @@ public class PasswordGenerator {
         if (IncludeSymbol.equalsIgnoreCase("Y")){
             allowedChars += symbols;
         }
+        if (allowedChars.isEmpty()) {
+            System.out.println("No character types selected. Cannot generate password.");
+            return;  // exit program
+        }
+
 
         Random rand = new Random();
         StringBuilder password = new StringBuilder();
@@ -47,3 +52,4 @@ public class PasswordGenerator {
         System.out.println("Password generated : "+password.toString());
     }
 }
+
